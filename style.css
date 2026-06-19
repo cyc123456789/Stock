@@ -1,0 +1,157 @@
+/* 每日選股網站共用樣式 — 手機優先、字體放大、繁體中文 */
+:root {
+  --bg: #0f1729;
+  --card: #1b2540;
+  --card-2: #232f52;
+  --accent: #ffce54;
+  --green: #34d399;
+  --red: #f87171;
+  --blue: #60a5fa;
+  --text: #f4f6fb;
+  --muted: #9fb0d0;
+  --border: #2e3c63;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.75;
+  letter-spacing: 0.2px;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 16px 56px;
+}
+
+header.site {
+  background: linear-gradient(135deg, #1d2a52 0%, #122046 100%);
+  border-bottom: 3px solid var(--accent);
+  padding: 26px 16px;
+  text-align: center;
+}
+
+header.site h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+header.site .sub {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+h2.section {
+  font-size: 24px;
+  margin: 34px 0 14px;
+  padding-left: 12px;
+  border-left: 6px solid var(--accent);
+}
+
+h2.section.us { border-left-color: var(--blue); }
+
+.market-note {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 18px 0;
+  font-size: 18px;
+  color: var(--text);
+}
+.market-note strong { color: var(--accent); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 18px 20px;
+  margin: 16px 0;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+}
+
+.card .name {
+  font-size: 23px;
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+.card .code {
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.levels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 14px 0;
+}
+.level {
+  background: var(--card-2);
+  border-radius: 12px;
+  padding: 10px 8px;
+  text-align: center;
+}
+.level .label { font-size: 14px; color: var(--muted); display: block; }
+.level .val { font-size: 19px; font-weight: 800; margin-top: 3px; }
+.level.buy .val { color: var(--blue); }
+.level.target .val { color: var(--green); }
+.level.stop .val { color: var(--red); }
+
+.card .reason, .card .risk {
+  font-size: 18px;
+  margin: 10px 0 0;
+}
+.card .reason b { color: var(--green); }
+.card .risk b { color: var(--red); }
+
+.disclaimer {
+  margin-top: 40px;
+  padding: 18px;
+  background: #161f38;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.archive-list { list-style: none; padding: 0; margin: 18px 0; }
+.archive-list li { margin: 0 0 12px; }
+.archive-list a {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 700;
+  transition: background 0.15s;
+}
+.archive-list a:hover, .archive-list a:active { background: var(--card-2); }
+.archive-list a .arrow { float: right; color: var(--accent); }
+
+.back-link {
+  display: inline-block;
+  margin: 4px 0 10px;
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 17px;
+}
+
+footer.site { text-align: center; color: var(--muted); font-size: 14px; padding: 10px 0 30px; }
